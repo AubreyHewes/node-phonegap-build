@@ -158,6 +158,8 @@ Options:
   - `options` {Object} is data required for building a platform.
   - `options.platforms` {Array} is a collection of platform names {String} that
                         specify the platforms to build.
+  - `options.keys` {Array} is a collection of keys {Object} that
+                        specify the keys for the platforms.
   - [`callback`] {Function} is triggered after the build is complete.
     - `e` {Error} is null unless there is an error.
     - `data` {Object} describes the built app.
@@ -169,7 +171,7 @@ Events:
 
 Examples:
 
-    var options = { platforms: ['android'] };
+    var options = { platforms: ['android'], keys: { "android": {"id": 12345, "key_pw": "X", "keystore_pw": "X"} } };
 
     phonegapbuild.build(options, function(e, data) {
         if (e) {
